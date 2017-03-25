@@ -1,0 +1,17 @@
+package org.pac4j.core.config;
+
+/**
+ * A factory to build the configuration.
+ *
+ * @author Jerome Leleu
+ * @since 1.8.0
+ */
+public interface ConfigFactory {
+
+    /**
+     * Build a configuration.
+     *
+     * @return the built configuration
+     */
+    Config build();
+}

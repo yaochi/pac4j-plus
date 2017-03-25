@@ -1,0 +1,39 @@
+description = "Package for pac4j-core jar"
+
+tasks.withType(GroovyCompile) {
+    groovyOptions.encoding = "MacRoman"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+javadoc {
+    options{
+        encoding "UTF-8"
+        charSet "UTF-8"
+        author true
+        version true
+    }
+}
+
+dependencies {
+    compile project(":pac4j-core")
+    compile libraries.kryoshaded
+    compile libraries.guava
+    compile libraries.commons
+    compile libraries.springsecuritycrypto
+    compile libraries.shiro
+    compile libraries.jbcrypt
+
+    compile libraries.spring
+    compile libraries.javax
+
+    testCompile libraries.tests
+    testCompile libraries.log4j
+    testCompile libraries.springtests
+    testCompile libraries.logbackclassic
+    testCompile libraries.guava
+    testCompile libraries.mockitocore
+}
+

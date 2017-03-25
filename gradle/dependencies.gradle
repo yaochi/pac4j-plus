@@ -1,0 +1,164 @@
+ext.libraries = [
+        json                    : [
+                dependencies.create("org.json:json:$jsonVersion") {
+                    force = true
+                }
+        ],
+        commons                 : [
+                dependencies.create("commons-io:commons-io:$commonsIoVersion") {
+                    force = true
+                },
+                dependencies.create("commons-codec:commons-codec:$commonsCodecVersion") {
+                    force = true
+                },
+                dependencies.create("commons-fileupload:commons-fileupload:$commonsFileuploadVersion") {
+                    force = true
+                },
+                dependencies.create("org.apache.commons:commons-lang3:$commonsLangVersion") {
+                    force = true
+                }
+        ],
+        findbugscontrib         : dependencies.create("com.mebigfatguy.fb-contrib:fb-contrib:$findbugsContribVersion"),
+        findbugs                : dependencies.create("com.google.code.findbugs:findbugs:$findbugsVersion") {
+            force = true
+        },
+        findbugssec             : dependencies.create("com.h3xstream.findsecbugs:findsecbugs-plugin:$findbugsSecVersion"),
+        groovy                  : [
+                dependencies.create("org.codehaus.groovy:groovy-jsr223:$groovyVersion") {
+                    force = true
+                },
+                dependencies.create("org.codehaus.groovy:groovy-console:$groovyVersion") {
+                    force = true
+                },
+                dependencies.create("org.codehaus.groovy:groovy-groovysh:$groovyVersion") {
+                    force = true
+                }
+        ],
+        javax                   : [
+                dependencies.create("javax.servlet:javax.servlet-api:$javaxServletVersion") {
+                    force = true
+                }
+        ],
+        javaximpl               : [
+                dependencies.create("javax.servlet:jstl:$javaxJstlVersion"),
+                dependencies.create("javax.transaction:jta:$jtaVersion")
+        ],
+        jackson                 : [
+                dependencies.create("com.fasterxml.jackson.core:jackson-databind:$jacksonDatabindVersion") {
+                    exclude(group: "com.fasterxml.jackson.core", module: "jackson-annotations")
+                    force = true
+                },
+                dependencies.create("com.fasterxml.jackson.datatype:jackson-datatype-guava:$jacksonDatabindVersion") {
+                    exclude(group: "com.google.guava", module: "guava")
+                    exclude(group: "com.fasterxml.jackson.core", module: "jackson-annotations")
+                    force = true
+                },
+                dependencies.create("com.fasterxml.jackson.core:jackson-annotations:$jacksonDatabindVersion") {
+                    force = true
+                },
+                dependencies.create("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonDatabindVersion") {
+                    exclude(group: "com.fasterxml.jackson.core", module: "jackson-annotations")
+                    force = true
+                },
+                dependencies.create("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:$jacksonDatabindVersion") {
+                    exclude(group: "org.yaml", module: "snakeyaml")
+                    exclude(group: "com.fasterxml.jackson.core", module: "jackson-annotations")
+                    force = true
+                }
+        ],
+        tests                   : [
+                dependencies.create("junit:junit:$junitVersion") {
+                    force = true
+                },
+                dependencies.create("org.json:json:$jsonVersion") {
+                    force = true
+                }
+        ],
+        springtests             : [
+                dependencies.create("org.springframework:spring-test:$springVersion")
+        ],
+        log4j                   : [
+                dependencies.create("org.apache.logging.log4j:log4j-api:$log4jVersion") {
+                    force = true
+                },
+                dependencies.create("org.apache.logging.log4j:log4j-core:$log4jVersion") {
+                    force = true
+                },
+                dependencies.create("org.apache.logging.log4j:log4j-jcl:$log4jVersion") {
+                    force = true
+                },
+                dependencies.create("org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion") {
+                    exclude(group: "org.slf4j", module: "slf4j-api")
+                    force = true
+                },
+                dependencies.create("org.apache.logging.log4j:log4j-web:$log4jVersion"),
+                dependencies.create("org.slf4j:slf4j-api:$slf4jVersion"),
+                dependencies.create("org.slf4j:jul-to-slf4j:$slf4jVersion")
+        ],
+        springbootjetty         : [
+                dependencies.create("org.springframework.boot:spring-boot-starter-jetty:$springBootVersion") {
+                    force = true
+                }
+        ],
+        springbootundertow      : [
+                dependencies.create("org.springframework.boot:spring-boot-starter-undertow:$springBootVersion") {
+                    force = true
+                }
+        ],
+        spring                  : [
+                dependencies.create("org.springframework:spring-core:$springVersion") {
+                    exclude(group: "commons-logging", module: "commons-logging")
+                    force = true
+                }
+        ],
+        casclient               : [
+                dependencies.create("org.jasig.cas.client:cas-client-core:$casclientVersion") {
+                    force = true
+                },
+                dependencies.create("org.jasig.cas.client:cas-client-support-saml:$casclientVersion") {
+                    force = true
+                }
+        ],
+        logbackclassic           : [
+                dependencies.create("ch.qos.logback:logback-classic:$logbackClassicVersion") {
+                    force = true
+                }
+        ],
+        guava                    : [
+                dependencies.create("com.google.guava:guava:$guavaVersion") {
+                    force = true
+                }
+        ],
+        kryoshaded               : [
+                dependencies.create("com.esotericsoftware:kryo-shaded:$kryoShadedVersion") {
+                    force = true
+                }
+        ],
+        springsecuritycrypto     : [
+                dependencies.create("org.springframework.security:spring-security-crypto:$springSecurityCryptoVersion") {
+                    force = true
+                }
+        ],
+        shiro                   : [
+                dependencies.create("org.apache.shiro:shiro-core:$shiroVersion") {
+                    exclude(group: "org.slf4j", module: "slf4j-api")
+                    force = true
+                }
+        ],
+        jbcrypt                 : [
+                dependencies.create("de.svenkubiak:jBCrypt:$jBCryptVersion") {
+                    force = true
+                }
+        ],
+        mockitocore             : [
+                dependencies.create("org.mockito:mockito-core:$mockitoCoreVersion") {
+                	exclude(group: "org.objenesis", module: "objenesis")
+                    force = true
+                }
+        ],
+        scribejavaapis          : [
+                dependencies.create("com.github.scribejava:scribejava-apis:$scribeVersion") {
+                    force = true
+                }
+        ],
+]

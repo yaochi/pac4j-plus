@@ -1,0 +1,7 @@
+rootProject.name = "pac4j-plus"
+
+
+include "pac4j-cas"
+include "pac4j-core"
+include "pac4j-oauth"
+

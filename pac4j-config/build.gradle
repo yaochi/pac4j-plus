@@ -1,0 +1,32 @@
+description = "Package for pac4j-config jar"
+
+tasks.withType(GroovyCompile) {
+    groovyOptions.encoding = "MacRoman"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+javadoc {
+    options{
+        encoding "UTF-8"
+        charSet "UTF-8"
+        author true
+        version true
+    }
+}
+
+dependencies {
+    compile project(":pac4j-core")
+    compile project(":pac4j-cas")
+    compile project(":pac4j-saml")
+    compile project(":pac4j-oauth")
+    compile project(":pac4j-oidc")
+
+    testCompile libraries.tests
+        
+    testCompile libraries.logbackclassic
+}
+
+
