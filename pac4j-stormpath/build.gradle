@@ -1,4 +1,5 @@
-description = "Package for pac4j-stormpath jar"
+
+description = 'pac4j for Stormpath'
 
 tasks.withType(GroovyCompile) {
     groovyOptions.encoding = "MacRoman"
@@ -18,12 +19,12 @@ javadoc {
 }
 
 dependencies {
-    compile libraries.commons
-    compile libraries.javax
+    compile project(':pac4j-core')
+    compile libraries.stormpathsdkapi
 
-    compile libraries.json
-    compile libraries.log4j
+    runtime libraries.scribejavahttpclient
+
+    testCompile project(':pac4j-core')
+    compile libraries.logbackclassic
     compile libraries.tests
 }
-
-

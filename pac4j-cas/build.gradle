@@ -1,4 +1,4 @@
-description = "Package for pac4j-cas jar"
+description = 'pac4j for CAS protocol'
 
 tasks.withType(GroovyCompile) {
     groovyOptions.encoding = "MacRoman"
@@ -23,11 +23,11 @@ dependencies {
     compile libraries.casclient
     compile libraries.javax
     
+    testCompile project(':pac4j-core')
     testCompile libraries.tests
         
     testCompile libraries.logbackclassic
     testCompile libraries.guava
 
 }
-
 

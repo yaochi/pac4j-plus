@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.pac4j</groupId>
         <artifactId>pac4j</artifactId>
-        <version>1.9.6</version>
+        <version>1.9.9-SNAPSHOT</version>
     </parent>
 
     <artifactId>pac4j-openid</artifactId>
@@ -37,11 +37,11 @@
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
         </dependency>
-        <dependency>
-            <groupId>xml-apis</groupId>
-            <artifactId>xml-apis</artifactId>
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
             <version>${xml-apis.version}</version>
-        </dependency>
+		</dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>

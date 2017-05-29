@@ -1,4 +1,5 @@
-description = "Package for pac4j-ldap jar"
+
+description = 'pac4j for LDAP'
 
 tasks.withType(GroovyCompile) {
     groovyOptions.encoding = "MacRoman"
@@ -18,12 +19,11 @@ javadoc {
 }
 
 dependencies {
-    compile libraries.commons
-    compile libraries.javax
+    compile project(':pac4j-core')
+    compile libraries.ldaptive
 
-    compile libraries.json
-    compile libraries.log4j
-    compile libraries.tests
+    testCompile project(':pac4j-core')
+    testCompile libraries.tests
+    testCompile libraries.logbackclassic
+    testCompile libraries.unboundidldapsdk
 }
-
-

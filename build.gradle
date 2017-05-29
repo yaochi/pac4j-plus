@@ -1,4 +1,4 @@
-description = "Profile &amp; Authentication Client for Java, Fork From https://github.com/pac4j/pac4j By Xie Xianbin."
+description = "Profile &amp; Authentication Client for Java, Fork From https://github.com/pac4j/pac4j-plus By Xie Xianbin."
 
 defaultTasks "clean", "build"
 
@@ -104,11 +104,6 @@ subprojects {
         mavenCentral()
         jcenter()
 
-        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
-        maven { url "http://maven.aliyun.com/nexus/content/repositories/public" }
-        maven { url "http://maven.aliyun.com/nexus/content/repositories/releases" }
-        maven { url "http://maven.aliyun.com/nexus/content/repositories/snapshots" }
-        maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter" }
         maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
         maven { url "https://oss.sonatype.org/content/repositories/releases" }
         maven { url "http://repo.maven.apache.org/maven2" }

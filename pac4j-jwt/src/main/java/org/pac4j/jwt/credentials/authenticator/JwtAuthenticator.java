@@ -117,8 +117,12 @@ public class JwtAuthenticator implements Authenticator<TokenCredentials> {
             // Parse the token
             JWT jwt = JWTParser.parse(token);
 
-            if (jwt instanceof PlainJWT) {
-                logger.debug("JWT is not signed -> verified");
+			if (jwt instanceof PlainJWT) {
+                if (signatureConfigurations.isEmpty()) {
+                    logger.debug("JWT is not signed and no signature configurations -> verified");
+                } else {
+                    throw new CredentialsException("A non-signed JWT cannot be accepted as signature configurations have been defined");
+                }
             } else {
 
                 SignedJWT signedJWT = null;
@@ -184,8 +188,7 @@ public class JwtAuthenticator implements Authenticator<TokenCredentials> {
                 }
             }
 
-
-              createJwtProfile(credentials, jwt);
+          	createJwtProfile(credentials, jwt);
 
         } catch (final ParseException e) {
             throw new TechnicalException("Cannot decrypt / verify JWT", e);
@@ -215,9 +218,9 @@ public class JwtAuthenticator implements Authenticator<TokenCredentials> {
         final Map<String, Object> attributes = new HashMap<>(claimSet.getClaims());
         attributes.remove(JwtClaims.SUBJECT);
 
-        final List<String> roles = (List<String>) attributes.get(JwtGenerator.INTERNAL_ROLES);
+		final List<String> roles = (List<String>) attributes.get(JwtGenerator.INTERNAL_ROLES);
         attributes.remove(JwtGenerator.INTERNAL_ROLES);
-        final List<String> permissions = (List<String>) attributes.get(JwtGenerator.INTERNAL_PERMISSIONS);
+		final List<String> permissions = (List<String>) attributes.get(JwtGenerator.INTERNAL_PERMISSIONS);
         attributes.remove(JwtGenerator.INTERNAL_PERMISSIONS);
 
         final CommonProfile profile = ProfileHelper.buildProfile(subject, attributes);

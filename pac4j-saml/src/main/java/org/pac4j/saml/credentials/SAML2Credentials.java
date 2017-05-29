@@ -39,7 +39,7 @@ public class SAML2Credentials extends Credentials {
     }
 
     public final String getSessionIndex() {
-        return this.sessionIndex;
+    	return this.sessionIndex;
     }
 
     public final List<Attribute> getAttributes() {

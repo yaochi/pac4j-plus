@@ -1,4 +1,5 @@
-description = "Package for pac4j-gae jar"
+
+description = 'pac4j for GAE UserService mechanism'
 
 tasks.withType(GroovyCompile) {
     groovyOptions.encoding = "MacRoman"
@@ -18,13 +19,12 @@ javadoc {
 }
 
 dependencies {
-    compile libraries.aliyunopenservices
-    compile libraries.commons
+    compile project(':pac4j-core')
+    compile libraries.appengine
+    compile libraries.jsr107cache
     compile libraries.javax
-
-    compile libraries.json
-    compile libraries.log4j
     compile libraries.tests
+    compile libraries.logbackclassic
+    
+    testCompile libraries.appenginetest
 }
-
-

@@ -161,4 +161,125 @@ ext.libraries = [
                     force = true
                 }
         ],
+        stormpathsdkapi         : [
+                dependencies.create("com.stormpath.sdk:stormpath-sdk-api:$stormpathsdkapiVersion") {
+                    force = true
+                }
+        ],
+        scribejavahttpclient    : [
+                dependencies.create("com.github.scribejava:stormpath-sdk-httpclient:$stormpathsdkapiVersion") {
+                    force = true
+                }
+        ],
+        appengine               : [
+                dependencies.create("com.google.appengine:appengine-api-1.0-sdk:$appengineVersion") {
+                    force = true
+                },
+                dependencies.create("com.github.scribejava:appengine-jsr107cache:$appengineVersion") {
+                    force = true
+                }
+        ],
+        appenginetest           : [
+                dependencies.create("com.google.appengine:appengine-testing:$appengineVersion") {
+                    force = true
+                },
+        ],
+        jsr107cache             : [
+                dependencies.create("net.sf.jsr107cache:jsr107cache:$jsr107cacheVersion") {
+                    force = true
+                }
+        ],
+        bcprovjdk15on           : [
+                dependencies.create("org.bouncycastle:bcprov-jdk15on:$bcprovjdk15onVersion") {
+                    force = true
+                }
+        ],
+        nimbusjosejwt           : [
+                dependencies.create("com.nimbusds:nimbus-jose-jwt:$nimbusjosejwtVersion") {
+                    force = true
+                }
+        ],
+        ldaptive                : [
+                dependencies.create("org.ldaptive:ldaptive:$ldaptiveVersion") {
+                    force = true
+                }
+        ],
+        unboundidldapsdk        : [
+                dependencies.create("com.unboundid:unboundid-ldapsdk:$unboundidldapsdkVersion") {
+                    force = true
+                }
+        ],
+        oauth2oidcsdk           : [
+                dependencies.create("com.nimbusds:oauth2-oidc-sdk:$oauth2oidcsdkVersion") {
+                    exclude(group: "com.nimbusds", module: "nimbus-jose-jwt")
+                    force = true
+                }
+        ],
+        mongojavadriver         : [
+                dependencies.create("org.mongodb:mongo-java-driver:$mongojavadriverVersion") {
+                    force = true
+                }
+        ],
+        flapdoodleembedmongo    : [
+                dependencies.create("de.flapdoodle.embed:de.flapdoodle.embed.mongo:$flapdoodleembedmongoVersion") {
+                    force = true
+                }
+        ],
+        xmlapis                 : [
+                dependencies.create("xml-apis:xml-apis:$xmlapisVersion") {
+                    force = true
+                }
+        ],
+        jcloverslf4j            : [
+                dependencies.create("org.slf4j:jcl-over-slf4j:$jcloverslf4jVersion") {
+                    force = true
+                }
+        ],
+        opensaml                : [
+                dependencies.create("org.opensaml:opensaml-core:$opensamlVersion") {
+                    force = true
+                },
+                dependencies.create("org.opensaml:opensaml-saml-api:$opensamlVersion") {
+                    force = true
+                },
+                dependencies.create("org.opensaml:opensaml-saml-impl:$opensamlVersion") {
+                    force = true
+                },
+                dependencies.create("org.opensaml:opensaml-soap-api:$opensamlVersion") {
+                    force = true
+                },
+                dependencies.create("org.opensaml:opensaml-xmlsec-api:$opensamlVersion") {
+                    force = true
+                },
+                dependencies.create("org.opensaml:opensaml-security-api:$opensamlVersion") {
+                    force = true
+                },
+                dependencies.create("org.opensaml:opensaml-security-impl:$opensamlVersion") {
+                    force = true
+                },
+                dependencies.create("org.opensaml:opensaml-profile-api:$opensamlVersion") {
+                    force = true
+                },
+                dependencies.create("org.opensaml:opensaml-profile-impl:$opensamlVersion") {
+                    force = true
+                },
+                dependencies.create("org.opensaml:opensaml-messaging-api:$opensamlVersion") {
+                    force = true
+                },
+                dependencies.create("org.opensaml:opensaml-messaging-impl:$opensamlVersion") {
+                    force = true
+                },
+                dependencies.create("org.opensaml:opensaml-xmlsec-impl:$opensamlVersion") {
+                    force = true
+                },
+        ],
+        jodatime               : [
+                dependencies.create("joda-joda-time:$jodatimeVersion") {
+                    force = true
+                }
+        ],
+
+
+
+
 ]

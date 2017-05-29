@@ -178,10 +178,10 @@ public class SAML2DefaultResponseValidator implements SAML2ResponseValidator {
     private final String getSessionIndex(Assertion subjectAssertion) {
         List<AuthnStatement> authnStatements = subjectAssertion.getAuthnStatements();
         if(authnStatements != null && authnStatements.size() > 0) {
-            AuthnStatement statement = authnStatements.get(0);
-            if(statement != null) {
-                return statement.getSessionIndex();
-            }
+        	AuthnStatement statement = authnStatements.get(0);
+        	if(statement != null) {
+        		return statement.getSessionIndex();
+        	}
         }
         return null;
     }
@@ -694,10 +694,10 @@ public class SAML2DefaultResponseValidator implements SAML2ResponseValidator {
         final DateTime before =  DateTime.now().plusSeconds(acceptedSkew);
         final DateTime after =  DateTime.now().minusSeconds(acceptedSkew + interval);
         boolean isDateValid = issueInstant.isBefore(before) && issueInstant.isAfter(after);
-        if (!isDateValid) {
-            logger.trace("interval={},before={},after={},issueInstant={}", interval, before.toDateTime(issueInstant.getZone()), after.toDateTime(issueInstant.getZone()), issueInstant);
-        }
-        return isDateValid;
+		if (!isDateValid) {
+			logger.trace("interval={},before={},after={},issueInstant={}", interval, before.toDateTime(issueInstant.getZone()), after.toDateTime(issueInstant.getZone()), issueInstant);
+		}
+	    return isDateValid;
     }
 
     private boolean isIssueInstantValid(final DateTime issueInstant) {

@@ -1,4 +1,5 @@
-description = "Package for pac4j-oauth jar"
+
+description = 'pac4j for OAuth protocol'
 
 tasks.withType(GroovyCompile) {
     groovyOptions.encoding = "MacRoman"
@@ -18,15 +19,13 @@ javadoc {
 }
 
 dependencies {
-    compile project(":pac4j-core")
-    compile libraries.commons
+  compile project(':pac4j-core')
+    testCompile libraries.commons
     compile libraries.scribejavaapis
     compile libraries.jackson
     compile libraries.javax
-    
+    testCompile project(':pac4j-core')
     testCompile libraries.tests
     testCompile libraries.logbackclassic
     testCompile libraries.kryoshaded
 }
-
-

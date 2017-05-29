@@ -1,4 +1,5 @@
-description = "Package for pac4j-oidc jar"
+
+description = 'pac4j for OpenID Connect protocol'
 
 tasks.withType(GroovyCompile) {
     groovyOptions.encoding = "MacRoman"
@@ -18,12 +19,11 @@ javadoc {
 }
 
 dependencies {
-    compile libraries.commons
-    compile libraries.javax
-
-    compile libraries.json
-    compile libraries.log4j
-    compile libraries.tests
+    compile project(':pac4j-core')
+    compile libraries.oauth2oidcsdk
+    compile libraries.nimbusjosejwt
+    compile libraries.kryoshaded
+    testCompile project(':pac4j-core')
+    testCompile libraries.tests
+    testCompile libraries.logbackclassic
 }
-
-

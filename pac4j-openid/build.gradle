@@ -1,4 +1,5 @@
-description = "Package for pac4j-openid jar"
+
+description = 'pac4j for OpenId protocol'
 
 tasks.withType(GroovyCompile) {
     groovyOptions.encoding = "MacRoman"
@@ -18,12 +19,15 @@ javadoc {
 }
 
 dependencies {
-    compile libraries.commons
+    compile project(':pac4j-core')
     compile libraries.javax
-
-    compile libraries.json
-    compile libraries.log4j
-    compile libraries.tests
+    compile(group: 'org.openid4java', name: 'openid4java', version:'1.0.0') {
+exclude(module: 'commons-logging')
+    }
+    compile libraries.jcloverslf4j
+    compile libraries.xmlapis
+  testCompile project(':pac4j-core')
+    testCompile libraries.tests
+    testCompile libraries.logbackclassic
+    testCompile libraries.kryoshaded
 }
-
-

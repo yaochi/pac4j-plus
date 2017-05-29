@@ -1,29 +1,11 @@
-description = "Package for pac4j-mongo jar"
 
-tasks.withType(GroovyCompile) {
-    groovyOptions.encoding = "MacRoman"
-}
-
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
-}
-
-javadoc {
-    options{
-        encoding "UTF-8"
-        charSet "UTF-8"
-        author true
-        version true
-    }
-}
-
+description = 'pac4j for MongoDB'
 dependencies {
-    compile libraries.commons
-    compile libraries.javax
-
-    compile libraries.json
-    compile libraries.log4j
-    compile libraries.tests
+    compile project(':pac4j-core')
+    compile libraries.mongojavadriver
+    testCompile project(':pac4j-core')
+    testCompile libraries.tests
+    testCompile libraries.logbackclassic
+    testCompile libraries.commons
+    testCompile libraries.flapdoodleembedmongo
 }
-
-

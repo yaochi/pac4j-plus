@@ -159,8 +159,8 @@ public class SAML2Client extends IndirectClient<SAML2Credentials, SAML2Profile> 
     }
 
     protected MetadataResolver initServiceProviderMetadataResolver(final WebContext context) {
-        this.spMetadataResolver = new SAML2ServiceProviderMetadataResolver(this.configuration,
-                computeFinalCallbackUrl(context),
+		this.spMetadataResolver = new SAML2ServiceProviderMetadataResolver(this.configuration,
+				computeFinalCallbackUrl(context),
                 this.credentialProvider);
         return this.spMetadataResolver.resolve();
     }

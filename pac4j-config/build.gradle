@@ -1,4 +1,5 @@
-description = "Package for pac4j-config jar"
+
+description = 'pac4j configuration'
 
 tasks.withType(GroovyCompile) {
     groovyOptions.encoding = "MacRoman"
@@ -24,9 +25,8 @@ dependencies {
     compile project(":pac4j-oauth")
     compile project(":pac4j-oidc")
 
+    testCompile project(':pac4j-core')
     testCompile libraries.tests
-        
+
     testCompile libraries.logbackclassic
 }
-
-

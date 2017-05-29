@@ -1,29 +1,10 @@
-description = "Package for pac4j-sql jar"
 
-tasks.withType(GroovyCompile) {
-    groovyOptions.encoding = "MacRoman"
-}
-
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
-}
-
-javadoc {
-    options{
-        encoding "UTF-8"
-        charSet "UTF-8"
-        author true
-        version true
-    }
-}
-
+description = 'pac4j for relational DB'
 dependencies {
-    compile libraries.commons
-    compile libraries.javax
-
-    compile libraries.json
-    compile libraries.log4j
-    compile libraries.tests
+  compile project(':pac4j-core')
+    compile group: 'org.jdbi', name: 'jdbi', version:'2.71'
+  testCompile project(':pac4j-core')
+    testCompile libraries.tests
+    testCompile libraries.commons
+    testCompile group: 'com.h2database', name: 'h2', version:'1.4.191'
 }
-
-

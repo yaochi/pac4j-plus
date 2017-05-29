@@ -1,4 +1,5 @@
-description = "Package for pac4j-core jar"
+
+description = 'pac4j core'
 
 tasks.withType(GroovyCompile) {
     groovyOptions.encoding = "MacRoman"
@@ -18,7 +19,6 @@ javadoc {
 }
 
 dependencies {
-    compile project(":pac4j-core")
     compile libraries.kryoshaded
     compile libraries.guava
     compile libraries.commons

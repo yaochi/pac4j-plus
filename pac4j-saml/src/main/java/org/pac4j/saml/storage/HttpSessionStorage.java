@@ -51,7 +51,7 @@ public class HttpSessionStorage implements SAMLMessageStorage {
      * @param request request to load/store internalMessages from
      */
     public HttpSessionStorage(final WebContext request) {
-        CommonHelper.assertNotNull("request", request);
+    	CommonHelper.assertNotNull("request", request);
         this.session = request;
     }
 

@@ -26,11 +26,11 @@ public class YahooOpenIdProfile extends OpenIdProfile {
     
     @Override
     public Locale getLocale() {
-        return (Locale) getAttribute(YahooOpenIdAttributesDefinition.LANGUAGE);
+    	return (Locale) getAttribute(YahooOpenIdAttributesDefinition.LANGUAGE);
     }
     
     @Override
     public String getDisplayName() {
-        return (String) getAttribute(YahooOpenIdAttributesDefinition.FULLNAME);
+    	return (String) getAttribute(YahooOpenIdAttributesDefinition.FULLNAME);
     }
 }

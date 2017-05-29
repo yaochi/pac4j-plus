@@ -1,29 +1,29 @@
-description = "Package for pac4j-saml jar"
 
-tasks.withType(GroovyCompile) {
-    groovyOptions.encoding = "MacRoman"
-}
-
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
-}
-
-javadoc {
-    options{
-        encoding "UTF-8"
-        charSet "UTF-8"
-        author true
-        version true
-    }
-}
-
+description = 'pac4j for SAML protocol'
 dependencies {
-    compile libraries.commons
+    compile project(':pac4j-core')
+    compile libraries.opensaml
+    compile group: 'net.shibboleth.utilities', name: 'java-support', version:'7.1.1'
+    compile libraries.guava
+    compile(group: 'org.cryptacular', name: 'cryptacular', version:'1.1.0') {
+		exclude(module: 'bcprov-jdk15on')
+    }
+    compile libraries.jodatime
+    compile group: 'xalan', name: 'xalan', version:'2.7.2'
+    compile group: 'org.apache.velocity', name: 'velocity', version:'1.7'
+    compile group: 'commons-collections', name: 'commons-collections', version:'3.2.2'
+    compile libraries.jcloverslf4j
     compile libraries.javax
 
-    compile libraries.json
-    compile libraries.log4j
-    compile libraries.tests
+    testCompile project(':pac4j-core')
+    testCompile libraries.tests
+    testCompile libraries.logbackclassic
+    testCompile libraries.kryoshaded
+    testCompile(group: 'org.springframework', name: 'spring-test', version:'4.2.4.RELEASE') {
+		exclude(module: 'commons-logging')
+    }
+    testCompile(group: 'org.springframework', name: 'spring-web', version:'4.2.4.RELEASE') {
+		exclude(module: 'commons-logging')
+    }
+    testCompile libraries.mockitocore
 }
-
-

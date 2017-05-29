@@ -31,16 +31,16 @@ public class YahooOpenIdClient extends BaseOpenIdClient<YahooOpenIdProfile> {
     @Override
     protected FetchRequest getFetchRequest() throws MessageException {
         final FetchRequest fetchRequest = FetchRequest.createFetchRequest();
-        fetchRequest.addAttribute(YahooOpenIdAttributesDefinition.EMAIL,
-                "http://axschema.org/contact/email", true);
-        fetchRequest.addAttribute(YahooOpenIdAttributesDefinition.FULLNAME,
-                "http://axschema.org/namePerson", true);
-        fetchRequest.addAttribute(YahooOpenIdAttributesDefinition.LANGUAGE,
-                "http://axschema.org/pref/language", true);
-        fetchRequest.addAttribute(YahooOpenIdAttributesDefinition.PROFILEPICTURE,
-                "http://axschema.org/media/image/default", true);
-        
-        logger.debug("fetchRequest: {}", fetchRequest);
+		fetchRequest.addAttribute(YahooOpenIdAttributesDefinition.EMAIL,
+				"http://axschema.org/contact/email", true);
+		fetchRequest.addAttribute(YahooOpenIdAttributesDefinition.FULLNAME,
+				"http://axschema.org/namePerson", true);
+		fetchRequest.addAttribute(YahooOpenIdAttributesDefinition.LANGUAGE,
+				"http://axschema.org/pref/language", true);
+		fetchRequest.addAttribute(YahooOpenIdAttributesDefinition.PROFILEPICTURE,
+				"http://axschema.org/media/image/default", true);
+		
+		logger.debug("fetchRequest: {}", fetchRequest);
         return fetchRequest;
     }
 

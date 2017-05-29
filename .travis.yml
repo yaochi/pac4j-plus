@@ -20,7 +20,7 @@ git:
   depth: 3
 env:
   global:
-  - secure: "JlFTItSTHxmevCoX1fXWkXtQOqP8ERT5ndeYMc378acqZIWEpmoSQelP8unRjtU6sU/4dxdUWpEFLrbcNQsFuPsgzMLGSwuEcjbuSBGMgdAHXSl6+FfBWrCcde2WIfk+eYMm7mrhcySWMvtWss1kDOu+s8+HtRvnRCAsfz+77hs="
+  - secure: "cDN6+bwe7NVMjvevGMwk9tdglhGf66yi3nvbnfSgio207FuNG4duF/RNOUOMsuWX1Sc79ZMDuOttZ5AvL3ZHKPtmzTBMvCdDkf1FwFmzU6N+x84rT4zyos+gZLgHbV0M0M28y8aJIJq2kcwiqVwuMBay5tjrpJ8IMPoY6eDl4uE="
 before_script:
  - export JAVA_OPTS="-Xmx2048m"
 before_install:
